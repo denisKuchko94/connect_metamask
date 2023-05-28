@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {
   FormControl,
   InputLabel,
@@ -7,9 +6,11 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { useStateContext } from "@/context";
-import { useEffect, useState } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
+import { useStateContext } from "@/context";
 import { formatChainAsNum } from "@/utils";
 import {
   METAMASK_ACCOUNTS,
@@ -17,8 +18,6 @@ import {
   NETWORKS,
   NETWORKS_ARR,
 } from "@/utils/const";
-import { addressesDev } from "@/utils/addresses";
-import { useContracts } from "@/hooks/useContracts";
 
 export default function Metamask() {
   const router = useRouter();

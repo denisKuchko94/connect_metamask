@@ -1,3 +1,5 @@
+import detectEthereumProvider from "@metamask/detect-provider";
+import { Typography } from "@mui/material";
 import {
   createContext,
   Dispatch,
@@ -8,12 +10,12 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Typography } from "@mui/material";
-import detectEthereumProvider from "@metamask/detect-provider";
-import { formatBalance, formatTokensAsNum } from "@/utils";
-import { NETWORK_NAMES, NETWORKS, NetworksKeys } from "@/utils/const";
+
 import { useContracts } from "@/hooks/useContracts";
+import { formatBalance, formatTokensAsNum } from "@/utils";
 import { addressesDev } from "@/utils/addresses";
+import { NETWORK_NAMES, NETWORKS } from "@/utils/const";
+
 export interface ProviderRpcError extends Error {
   message: string;
   code: number;
@@ -60,6 +62,7 @@ export const StateContextProvider = ({ children }: PropsWithChildren) => {
 
     if (accounts.length === 0) {
       setAWallet(INITIAL_STATE);
+
       return;
     }
 
@@ -73,6 +76,7 @@ export const StateContextProvider = ({ children }: PropsWithChildren) => {
     const chainId = await window.ethereum.request({
       method: "eth_chainId",
     });
+
     setAWallet({ accounts, balance, chainId });
   }, []);
 
@@ -94,6 +98,7 @@ export const StateContextProvider = ({ children }: PropsWithChildren) => {
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
+
         setError("");
         updateWallet(accounts);
         cb?.();
@@ -115,6 +120,7 @@ export const StateContextProvider = ({ children }: PropsWithChildren) => {
         });
       } catch (switchError) {
         const { code } = switchError as ProviderRpcError;
+
         // This error code indicates that the chain has not been added to MetaMask.
         if (code === 4902) {
           const networkSettings = NETWORK_NAMES.filter(
@@ -140,6 +146,7 @@ export const StateContextProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const getProvider = async () => {
       const provider = await detectEthereumProvider({ silent: true });
+
       setIsProvider(!!provider);
 
       if (provider) {
@@ -168,9 +175,11 @@ export const StateContextProvider = ({ children }: PropsWithChildren) => {
         setToken(formatTokensAsNum(balance, decimals));
       } catch (err) {
         const { message } = err as ProviderRpcError;
+
         setError(message);
       }
     };
+
     getTokens();
   }, [wallet.accounts]);
 

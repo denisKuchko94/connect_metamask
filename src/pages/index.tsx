@@ -1,8 +1,9 @@
+import { Button, CircularProgress, Stack } from "@mui/material";
 import Head from "next/head";
-import { Box, Button, CircularProgress } from "@mui/material";
 import { useRouter } from "next/router";
+import React, { useCallback } from "react";
+
 import { useStateContext } from "@/context";
-import React, { useCallback, useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
@@ -13,17 +14,19 @@ export default function Home() {
     connectMetaMask,
   } = useStateContext();
 
-  const onRedirect = () => {
+  const onRedirectToMetamask = useCallback(() => {
     router.push("/metamask");
-  };
+  }, []);
+
+  const onRedirectToCosmos = useCallback(() => {
+    router.push("/cosmos");
+  }, []);
 
   const onConnectToMetamaskHandler = useCallback(() => {
-    accounts.length ? onRedirect() : connectMetaMask(onRedirect);
+    accounts.length
+      ? onRedirectToMetamask()
+      : connectMetaMask(onRedirectToMetamask);
   }, [accounts.length, connectMetaMask, router]);
-
-  useEffect(() => {
-    accounts.length && router.push("/metamask");
-  }, [accounts]);
 
   return (
     <>
@@ -35,15 +38,36 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          <Box>
-            <Button
-              onClick={onConnectToMetamaskHandler}
-              variant={"contained"}
-              disabled={isLoading}
-            >
-              {isLoading ? <CircularProgress color={"info"} /> : "Connect"}
-            </Button>
-          </Box>
+          <Stack
+            width={"100vw"}
+            height={"100vh"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Stack flexDirection={"row"} gap={"32px"}>
+              <Button
+                onClick={onConnectToMetamaskHandler}
+                variant={"contained"}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <CircularProgress color={"info"} />
+                ) : accounts.length ? (
+                  "To metamask"
+                ) : (
+                  "Connect to metamask"
+                )}
+              </Button>
+
+              <Button
+                onClick={onRedirectToCosmos}
+                variant={"contained"}
+                disabled={isLoading}
+              >
+                To cosmos
+              </Button>
+            </Stack>
+          </Stack>
         </div>
       </main>
     </>

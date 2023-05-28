@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ece40a5-58d9-4feb-8f27-58d5f6f871ad" name="Changes" comment="" />
+    <list default="true" id="2ece40a5-58d9-4feb-8f27-58d5f6f871ad" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abis/Token.json" beforeDir="false" afterPath="$PROJECT_DIR$/abis/token.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useContracts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useContracts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/hello.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,21 +37,43 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/useradmin/Documents/May Project/metamask_to_git/connect_metamask",
+    "last_opened_file_path": "/Users/useradmin/Documents/May Project/metamask_to_git/connect_metamask/abis",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "/Users/useradmin/Documents/May Project/metamask_to_git/connect_metamask/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/useradmin/Documents/May Project/metamask_to_git/connect_metamask/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/abis" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2ece40a5-58d9-4feb-8f27-58d5f6f871ad" name="Changes" comment="" />
@@ -48,6 +82,12 @@
       <option name="presentableId" value="Default" />
       <updated>1684955451143</updated>
       <workItem from="1684955452830" duration="2565000" />
+      <workItem from="1684958357552" duration="112000" />
+      <workItem from="1684994269264" duration="2390000" />
+      <workItem from="1684996705515" duration="90000" />
+      <workItem from="1684996806800" duration="25598000" />
+      <workItem from="1685081194681" duration="14192000" />
+      <workItem from="1685280933251" duration="2869000" />
     </task>
     <servers />
   </component>
